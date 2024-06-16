@@ -1,9 +1,11 @@
 ---
+import {ViewTransitions} from 'astro:transitions';
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -15,37 +17,99 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
+    <ViewTransitions fallback="none" />
+  </head>
+  <body>
+    <nav class="bg-gray-900 text-white p-4 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="hidden md:flex space-x-4">
+              <a href="/" class="hover:text-gray-400 transition duration-300">Inicio</a>
+              <a href="/projects/" class="hover:text-gray-400 transition duration-300">Proyectos</a>
+                <a href="#" class="hover:text-gray-400 transition duration-300">Contacto</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-button" class="focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden flex-col mt-2 space-y-2 bg-gray-800 p-4 rounded-lg transform transition-transform duration-300 ease-in-out">
+            <a href="#" class="block hover:text-gray-400 transition duration-300">Inicio</a>
+            <a href="#" class="block hover:text-gray-400 transition duration-300">Sobre mí</a>
+            <a href="#" class="block hover:text-gray-400 transition duration-300">Proyectos</a>
+            <a href="#" class="block hover:text-gray-400 transition duration-300">Contacto</a>
+        </div>
+    </nav>
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton!.addEventListener('click', () => {
+            if (mobileMenu!.classList.contains('hidden')) {
+                mobileMenu!.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu!.classList.remove('transform', 'scale-y-0');
+                }, 10);
+            } else {
+                mobileMenu!.classList.add('transform', 'scale-y-0');
+                mobileMenu!.addEventListener('transitionend', () => {
+                    mobileMenu!.classList.add('hidden');
+                }, { once: true });
+            }
+        });
+
+        
+    </script>
+    <slot />
+  <script>
+    document.addEventListener('mousemove', function(e) {
+          const feedback = document.querySelector('.feedback');
+          const mouseX = e.clientX;
+          const mouseY = e.clientY;
+          feedback.style.left = mouseX + 'px';
+          feedback.style.top = mouseY + 'px';
+        });
+  </script>  
+  <div transition:name="light" transition:persist class="feedback z-0"></div>
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+    font-family: "Montserrat", system-ui, sans-serif;
+    background: #0a0a23;
+    color: Gray;
+		background-size: 124px;
+  }
+  body {
+    margin: 0;
+    height: 100dvh;
+  }
+  
+
+    .feedback {
+     position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, box-shadow 0.5s ease; /* agregamos transición al box-shadow */
+    box-shadow: 0 0 300px 150px rgba(10, 10, 51, 0.3);
+    z-index: -1;
+    }
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/path/to/fonts/Montserrat-Regular.woff2') format('woff2'),
+         url('/path/to/fonts/Montserrat-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/path/to/fonts/Montserrat-Bold.woff2') format('woff2'),
+         url('/path/to/fonts/Montserrat-Bold.woff') format('woff');
+}
 </style>
