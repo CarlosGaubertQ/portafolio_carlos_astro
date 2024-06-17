@@ -1,23 +1,44 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Portafolio Carlos Gaubert Quijada.">
-  
-  <div class="">
-    Pagina principal
+  <div class="flex flex-col items-center justify-center min-h-screen">
+    <div class="flex flex-row">
+      <div class="">
+        <h1 class="text-4xl font-bold">Portafolio Carlos Gaubert Quijada.</h1>
+        <p class="text-xl">
+          I'm a software engineer and a passionate about technology. I love to
+          learn new things and to share my knowledge with others.
+        </p>
+        <p class="text-xl">
+          I'm currently working as a software engineer at <a
+            href="https://www.netlify.com/"
+            target="_blank">Netlify</a
+          >.
+        </p>
+        <p class="text-xl">
+          I'm also a <a href="https://github.com/cgaubertq" target="_blank"
+            >GitHub</a
+          > and <a href="https://twitter.com/cgaubertq" target="_blank"
+            >Twitter</a
+          > user.
+        </p>
+      </div>
+      <div class="">hola manchin</div>
+    </div>
+    <div class="flex-1"></div>
   </div>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
   }
-
 </style>
