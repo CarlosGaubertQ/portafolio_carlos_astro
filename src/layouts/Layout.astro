@@ -19,7 +19,7 @@ const { title } = Astro.props;
     <ViewTransitions fallback="none" />
   </head>
   <body>
-    <nav class="bg-gray-900 text-white p-4 z-50">
+    <nav class="text-white p-4 z-50">
       <div class="container mx-auto flex justify-between items-center">
         <div class="hidden md:flex space-x-4">
           <a href="/" class="hover:text-gray-400 transition duration-300"
@@ -33,7 +33,7 @@ const { title } = Astro.props;
             >Contacto</a
           >
         </div>
-        <div class="md:hidden">
+        <div class="md:hidden justify-end items-center flex">
           <button id="menu-button" class="focus:outline-none">
             <svg
               class="w-6 h-6"
@@ -53,16 +53,14 @@ const { title } = Astro.props;
       </div>
       <div
         id="mobile-menu"
-        class="md:hidden hidden flex-col mt-2 space-y-2 bg-gray-800 p-4 rounded-lg transform transition-transform duration-300 ease-in-out"
+        class="md:hidden hidden flex-col mt-2 space-y-2 bg-zinc-800 p-4 rounded-lg transform transition-transform duration-300 ease-in-out"
       >
-        <a href="#" class="block hover:text-gray-400 transition duration-300"
+        <a href="/" class="block hover:text-gray-400 transition duration-300"
           >Inicio</a
         >
-        <a href="#" class="block hover:text-gray-400 transition duration-300"
-          >Sobre mí</a
-        >
-        <a href="#" class="block hover:text-gray-400 transition duration-300"
-          >Proyectos</a
+        <a
+          href="/projects/"
+          class="block hover:text-gray-400 transition duration-300">Proyectos</a
         >
         <a href="#" class="block hover:text-gray-400 transition duration-300"
           >Contacto</a
@@ -94,20 +92,23 @@ const { title } = Astro.props;
     <slot />
     <script>
       document.addEventListener("mousemove", function (e) {
-        const feedback = document.querySelector(".feedback");
+        const feedback = document.querySelector(
+          ".feedback",
+        ) as HTMLElement | null;
         const mouseX = e.clientX;
         const mouseY = e.clientY;
-        feedback.style.left = mouseX + "px";
-        feedback.style.top = mouseY + "px";
+        if (feedback) {
+          feedback.style.left = mouseX + "px";
+          feedback.style.top = mouseY + "px";
+        }
       });
     </script>
     <div transition:name="light" transition:persist class="feedback z-0"></div>
     <style is:global>
       html {
         font-family: "Montserrat", system-ui, sans-serif;
-        background: #0a0a23;
-        color: Gray;
-        background-size: 124px;
+        background: #000000;
+        color: White;
       }
       body {
         margin: 0;
@@ -121,26 +122,90 @@ const { title } = Astro.props;
         transform: translate(-50%, -50%);
         transition:
           transform 0.1s ease,
-          box-shadow 0.5s ease; /* agregamos transición al box-shadow */
-        box-shadow: 0 0 300px 150px rgba(10, 10, 51, 0.3);
+          box-shadow 0.5s ease;
+        box-shadow: 0 0 400px 150px rgba(50, 50, 50, 0.3);
         z-index: -1;
-      }
-      @font-face {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 400;
-        src:
-          url("/path/to/fonts/Montserrat-Regular.woff2") format("woff2"),
-          url("/path/to/fonts/Montserrat-Regular.woff") format("woff");
       }
 
       @font-face {
         font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 700;
         src:
-          url("/path/to/fonts/Montserrat-Bold.woff2") format("woff2"),
-          url("/path/to/fonts/Montserrat-Bold.woff") format("woff");
+          url("/fonts/montserrat-thin-webfont.woff2") format("woff2"),
+          url("/fonts/montserrat-thin-webfont.woff") format("woff");
+        font-weight: 100;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Montserrat";
+        src:
+          url("/fonts/montserrat-extralight-webfont.woff2") format("woff2"),
+          url("/fonts/montserrat-extralight-webfont.woff") format("woff");
+        font-weight: 200;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Montserrat";
+        src:
+          url("/fonts/montserrat-light-webfont.woff2") format("woff2"),
+          url("/fonts/montserrat-light-webfont.woff") format("woff");
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Montserrat";
+        src:
+          url("/fonts/montserrat-regular-webfont.woff2") format("woff2"),
+          url("/fonts/montserrat-regular-webfont.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Montserrat";
+        src:
+          url("/fonts/montserrat-medium-webfont.woff2") format("woff2"),
+          url("/fonts/montserrat-medium-webfont.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Montserrat";
+        src:
+          url("/fonts/montserrat-semibold-webfont.woff2") format("woff2"),
+          url("/fonts/montserrat-semibold-webfont.woff") format("woff");
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Montserrat";
+        src:
+          url("/fonts/montserrat-bold-webfont.woff2") format("woff2"),
+          url("/fonts/montserrat-bold-webfont.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Montserrat";
+        src:
+          url("/fonts/montserrat-extrabold-webfont.woff2") format("woff2"),
+          url("/fonts/montserrat-extrabold-webfont.woff") format("woff");
+        font-weight: 800;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Montserrat";
+        src:
+          url("/fonts/montserrat-black-webfont.woff2") format("woff2"),
+          url("/fonts/montserrat-black-webfont.woff") format("woff");
+        font-weight: 900;
+        font-style: normal;
       }
     </style>
   </body>
