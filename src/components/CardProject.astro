@@ -1,0 +1,104 @@
+---
+
+---
+
+<div class="box border-white place-self-center">
+  <img
+    src="/prueba.jpg"
+    alt="card"
+    class="object-cover h-20 w-96 pt-2 z-20 rounded-t-[20px]"
+  />
+
+  <div class="relative w-full h-full p-5 z-20">
+    <p class="text-lg font-bold">Titulo Proyecto</p>
+    <p class="text-sm text-zinc-400 mt-2 h-20 overflow-scroll">
+      lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quam. Ipsam
+      quaerat, quam, doloremque, quibusdam, voluptate, laboriosam, ipsum, eaque
+      voluptates, quaerat, quisquam, doloremque, voluptate, laboriosam, ipsum,
+      oluptate, laboriosam. Quaerat, quam, doloremque, quibusdam, voluptate,
+      laboriosam, ipsum, eaque voluptates, quaerat, quisquam, doloremque,
+      voluptate, laboriosam, ipsum, oluptate, laboriosam. Quaerat, quam,
+      doloremque, quibusdam, voluptate, laboriosam, ipsum, eaque voluptates,
+      quaerat, quisquam, doloremque, voluptate, laboriosam, ipsum, oluptate,
+      laboriosam. Quaerat, quam, doloremque, quibusdam, voluptate, laboriosam,
+      ipsum, eaque voluptates, quaerat, quisquam,
+    </p>
+  </div>
+</div>
+
+<style>
+  .box {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.15);
+    animation: initialAnimation 0.5s ease-out;
+  }
+
+  .box:hover {
+    box-shadow:
+      0 8px 16px rgba(255, 255, 255, 0.2),
+      0 12px 40px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    animation: hoverAnimation 0.5s ease-out;
+    animation-fill-mode: backwards;
+  }
+  .box h2 {
+    color: rgb(226, 226, 226);
+    font-size: 2rem;
+    text-shadow: 2px, 2px, black;
+    z-index: 2;
+  }
+
+  .box::after {
+    content: "";
+    position: absolute;
+    background: rgb(25, 25, 25);
+    inset: 5px;
+    border-radius: 16px;
+  }
+
+  .box::before {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 190%;
+    background: linear-gradient(#00ccff, #d500f9);
+    animation: rotate 4s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes initialAnimation {
+    from {
+      transform: scale(1.05);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes hoverAnimation {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
+  }
+</style>
