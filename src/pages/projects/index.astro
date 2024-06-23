@@ -5,8 +5,17 @@ import CardProject from "../../components/CardProject.astro";
 
 <Layout title="Proyectos.">
   <div
-    class="flex justify-center items-center md:grid-cols-2 grid-cols-1 center gap-2 min-h-svh py-12 sm:px-6 lg:px-8"
+    class="grid justify-center items-center lg:grid-cols-2 xl:grid-cols-3 grid-cols-1 h-screen w-screen gap-10 p-20 mb-32"
   >
+    <CardProject />
+
+    <CardProject />
+    <CardProject />
+    <CardProject />
+    <CardProject />
+    <CardProject />
+    <CardProject />
+    <CardProject />
     <CardProject />
   </div>
 </Layout>
@@ -14,11 +23,5 @@ import CardProject from "../../components/CardProject.astro";
 <style>
   main {
     margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
   }
 </style>
