@@ -1,8 +1,155 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
 ---
 
+<!-- Añadir el CDN de Font Awesome en el archivo Layout.astro o en el head de tu documento -->
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/8K7a8O6dW/5hQh8b8bL6BjgnEHPDd0b+FMBtM"
+    crossorigin="anonymous"
+  />
+</head>
+
 <Layout title="Contact">
-  <h1>Contact</h1>
-  <p>This is the contact page</p>
+  <div class="flex justify-center items-center w-full h-full">
+    <div class="container">
+      <div class="card">
+        <p class="text-[30px] md:text-[40px] font-bold">
+          Si quieres contactarte conmigo, puedes hacerlo bajo los siguientes
+          medios en:
+        </p>
+        <ul class="list-none space-y-2 mt-4">
+          <li class="flex items-center">
+            <i class="fas fa-envelope mr-2"></i>
+            <a
+              href="mailto:carlosgaubertquijada@gmail.com"
+              target="_blank"
+              class="underline"
+            >
+              carlosgaubertquijada@gmail.com
+            </a>
+          </li>
+          <li class="flex items-center">
+            <i class="fab fa-twitter mr-2"></i>
+            <a
+              href="https://twitter.com/carlosgaubertquijada"
+              target="_blank"
+              class="underline"
+            >
+              Twitter
+            </a>
+          </li>
+          <li class="flex items-center">
+            <i class="fab fa-linkedin mr-2"></i>
+            <a
+              href="https://www.linkedin.com/in/carlosgaubertquijada/"
+              target="_blank"
+              class="underline"
+            >
+              LinkedIn
+            </a>
+          </li>
+          <li class="flex items-center">
+            <i class="fab fa-github mr-2"></i>
+            <a
+              href="https://github.com/carlosgaubertquijada"
+              target="_blank"
+              class="underline"
+            >
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+      <script lang="javascript" is:inline>
+        (function () {
+          let card = document.querySelector(".card");
+
+          document.addEventListener("mousemove", (e) => {
+            rotateElement(e, card);
+          });
+
+          function rotateElement(event, element) {
+            // get mouse position
+            const x = event.clientX;
+            const y = event.clientY;
+            // console.log(x, y)
+
+            // find the middle
+            const middleX = window.innerWidth / 2;
+            const middleY = window.innerHeight / 2;
+            // console.log(middleX, middleY)
+
+            // get offset from middle as a percentage
+            // and tone it down a little
+            const offsetX = ((x - middleX) / middleX) * 45;
+            const offsetY = ((y - middleY) / middleY) * 45;
+            //console.log(offsetX, offsetY);
+
+            // set rotation
+            element.style.setProperty("--rotateX", offsetX + "deg");
+            element.style.setProperty("--rotateY", -1 * offsetY + "deg");
+          }
+        })();
+      </script>
+      <style>
+        .container {
+          background-blend-mode: multiply;
+          min-block-size: 100dvh;
+          display: grid;
+          place-items: center;
+        }
+
+        .card {
+          --selector: var(--pink);
+          --property: var(--teal);
+          --punctuation: var(--white);
+          --undefined: var(--white);
+          max-width: 900px;
+          color: var(--undefined);
+          background: hsl(222, 45%, 7%);
+          padding: 2rem;
+          border-radius: 1rem;
+          margin: auto;
+          position: relative;
+
+          transform-style: preserve-3d;
+          transform: perspective(6000px) rotateY(var(--rotateX))
+            rotateX(var(--rotateY));
+        }
+
+        .card > * {
+          text-shadow: 0 0 0.3em currentColor;
+        }
+
+        .card::before,
+        .card::after {
+          content: "";
+          position: absolute;
+          border-radius: inherit;
+        }
+
+        /* shadow */
+        .card::before {
+          inset: 0.75rem;
+          border-radius: inherit;
+          background: black;
+          z-index: -1;
+          transform: translateZ(-50px);
+          filter: blur(15px);
+          opacity: 0.5;
+        }
+
+        /* gradient thingy */
+        .card::after {
+          z-index: -2;
+          inset: -1rem;
+          background: linear-gradient(-45deg, #d500f9, #00ccff);
+          transform: translateZ(-50px);
+        }
+      </style>
+    </div>
+  </div>
 </Layout>

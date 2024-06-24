@@ -1,36 +1,23 @@
 ---
-
+const { patchImage, nameProject, descriptionProject, githubUrl } = Astro.props;
 ---
 
 <div class="box place-self-center">
   <div class="image-container h-24 z-20">
     <img
-      src="/prueba.jpg"
+      src={patchImage}
       alt="card"
-      class="object-none h-24 w-96 pt-[10px] z-20 rounded-t-[20px]"
+      class="object-cover h-24 w-96 pt-[10px] z-20 rounded-t-[20px]"
     />
-    <a
-      href="https://github.com/tu-repo"
-      target="_blank"
-      class="github-icon animate-pulse"
-    >
+    <a href={githubUrl} target="_blank" class="github-icon">
       <img class="bg-white rounded-full" src="/github.webp" alt="GitHub" />
     </a>
   </div>
 
   <div class="relative w-full h-full p-5 z-20">
-    <p class="text-lg font-bold">Titulo Proyecto</p>
+    <p class="text-lg font-bold">{nameProject}</p>
     <p class="text-sm text-zinc-400 mt-2 h-20 overflow-scroll">
-      lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quam. Ipsam
-      quaerat, quam, doloremque, quibusdam, voluptate, laboriosam, ipsum, eaque
-      voluptates, quaerat, quisquam, doloremque, voluptate, laboriosam, ipsum,
-      oluptate, laboriosam. Quaerat, quam, doloremque, quibusdam, voluptate,
-      laboriosam, ipsum, eaque voluptates, quaerat, quisquam, doloremque,
-      voluptate, laboriosam, ipsum, oluptate, laboriosam. Quaerat, quam,
-      doloremque, quibusdam, voluptate, laboriosam, ipsum, eaque voluptates,
-      quaerat, quisquam, doloremque, voluptate, laboriosam, ipsum, oluptate,
-      laboriosam. Quaerat, quam, doloremque, quibusdam, voluptate, laboriosam,
-      ipsum, eaque voluptates, quaerat, quisquam,
+      {descriptionProject}
     </p>
   </div>
 </div>
