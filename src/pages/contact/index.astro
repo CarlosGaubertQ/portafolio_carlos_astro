@@ -26,7 +26,7 @@ import Layout from "@/layouts/Layout.astro";
             <a
               href="mailto:carlosgaubertquijada@gmail.com"
               target="_blank"
-              class="underline"
+              class="underline hover:animate-pulse"
             >
               carlosgaubertquijada@gmail.com
             </a>
@@ -36,7 +36,7 @@ import Layout from "@/layouts/Layout.astro";
             <a
               href="https://twitter.com/carlosgaubertquijada"
               target="_blank"
-              class="underline"
+              class="underline hover:animate-pulse"
             >
               Twitter
             </a>
@@ -44,9 +44,9 @@ import Layout from "@/layouts/Layout.astro";
           <li class="flex items-center">
             <i class="fab fa-linkedin mr-2"></i>
             <a
-              href="https://www.linkedin.com/in/carlosgaubertquijada/"
+              href="https://www.linkedin.com/in/carlos-gaubert-9832b1b9/"
               target="_blank"
-              class="underline"
+              class="underline hover:animate-pulse"
             >
               LinkedIn
             </a>
@@ -54,9 +54,9 @@ import Layout from "@/layouts/Layout.astro";
           <li class="flex items-center">
             <i class="fab fa-github mr-2"></i>
             <a
-              href="https://github.com/carlosgaubertquijada"
+              href="https://github.com/CarlosGaubertQ"
               target="_blank"
-              class="underline"
+              class="underline hover:animate-pulse"
             >
               GitHub
             </a>
@@ -75,18 +75,15 @@ import Layout from "@/layouts/Layout.astro";
             // get mouse position
             const x = event.clientX;
             const y = event.clientY;
-            // console.log(x, y)
 
             // find the middle
             const middleX = window.innerWidth / 2;
             const middleY = window.innerHeight / 2;
-            // console.log(middleX, middleY)
 
             // get offset from middle as a percentage
             // and tone it down a little
-            const offsetX = ((x - middleX) / middleX) * 45;
-            const offsetY = ((y - middleY) / middleY) * 45;
-            //console.log(offsetX, offsetY);
+            const offsetX = ((x - middleX) / middleX) * 5;
+            const offsetY = ((y - middleY) / middleY) * 5;
 
             // set rotation
             element.style.setProperty("--rotateX", offsetX + "deg");
@@ -116,7 +113,7 @@ import Layout from "@/layouts/Layout.astro";
           position: relative;
 
           transform-style: preserve-3d;
-          transform: perspective(6000px) rotateY(var(--rotateX))
+          transform: perspective(1000px) rotateY(var(--rotateX))
             rotateX(var(--rotateY));
         }
 
