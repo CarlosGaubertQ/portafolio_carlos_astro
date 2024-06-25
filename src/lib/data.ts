@@ -21,7 +21,7 @@ export const repositories = [
     githubUrl: "https://github.com/CarlosGaubertQ/portafolio_carlos_astro",
   },
   {
-    patchImage: "/repositories/react.png",
+    patchImage: "/repositories/React.png",
     nameProject: "Sistema de camiones (Frontend).",
     descriptionProject:
       "Sistema de gestión de camiones. Este sistema fue desarrollado para reemplazar sistema obsoleto. Desarrollado en ReactJS utilizando material UI.",
