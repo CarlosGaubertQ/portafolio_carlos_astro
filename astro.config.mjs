@@ -4,7 +4,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://portafolio_carlos_astro.netlify.app",
+  site: "https://carlosgaubertq.github.io/",
+  base: ".",
   integrations: [tailwind()],
 });
 
