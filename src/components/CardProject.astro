@@ -20,7 +20,11 @@ const { patchImage, nameProject, descriptionProject, githubUrl } = Astro.props;
 
   <div class="relative w-full h-full p-5 z-20">
     <p class="text-lg font-bold">{nameProject}</p>
-    <p class="text-sm text-zinc-400 mt-2 h-20 overflow-scroll">
+    <p
+      class="text-sm text-zinc-400 mt-2 h-20 overflow-scroll overflow-x-hidden
+               scrollbar scrollbar-w-4 scrollbar-thumb-rounded-full scrollbar-track-rounded-full
+         scrollbar-thumb-black scrollbar-track-zinc-900 overflow-y-scroll"
+    >
       {descriptionProject}
     </p>
   </div>
