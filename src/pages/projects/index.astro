@@ -32,12 +32,9 @@ import { repositories } from "@/lib/data";
     .addEventListener("input", function (this: HTMLInputElement) {
       let filterValue = this.value.toLowerCase();
       let gridItems = document.querySelectorAll(".grid-item");
-
+      console.log(gridItems);
       gridItems.forEach(function (item) {
-        const img = item.querySelector("img");
-
-        const altText = img!.getAttribute("alt");
-
+        // Aserción de tipo a HTMLElement
         const htmlItem = item as HTMLElement;
 
         if (htmlItem.textContent!.toLowerCase().includes(filterValue)) {
