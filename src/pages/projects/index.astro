@@ -37,11 +37,13 @@ import { repositories } from "@/lib/data";
         const img = item.querySelector("img");
 
         const altText = img!.getAttribute("alt");
-        console.log(altText);
-        if (item.textContent!.toLowerCase().includes(filterValue)) {
-          item.style.display = "";
+
+        const htmlItem = item as HTMLElement;
+
+        if (htmlItem.textContent!.toLowerCase().includes(filterValue)) {
+          htmlItem.style.display = "";
         } else {
-          item.style.display = "none";
+          htmlItem.style.display = "none";
         }
       });
     });
