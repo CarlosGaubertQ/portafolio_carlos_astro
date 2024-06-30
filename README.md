@@ -1,54 +1,70 @@
-# Astro Starter Kit: Basics
+# Mi Portafolio de Desarrollador
 
-```sh
-npm create astro@latest -- --template basics
-```
+¡Bienvenido a mi portafolio! Aquí podrás encontrar una selección de mis proyectos y trabajos realizados como desarrollador. Esta web está construida utilizando <a href="https://astro.build/" target="_blank">Astro</a>, un moderno framework para crear sitios web rápidos y optimizados.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Características
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Tecnologías utilizadas**: Astro, HTML, CSS, JavaScript
+- **Responsivo**: Diseño adaptable a diferentes dispositivos y tamaños de pantalla.
+- **Optimizado**: Rendimiento y velocidad mejorados gracias a las características de Astro.
+- **Accesibilidad**: Cumplimiento de buenas prácticas para asegurar que la web sea accesible para todos.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Instalación
 
-## 🚀 Project Structure
+Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 
-Inside of your Astro project, you'll see the following folders and files:
+1. **Clona el repositorio**:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.git
+   ```
+
+2. Navega al directorio del proyecto:
+
+   ```bash
+   cd tu-repositorio
+   ```
+
+3. Instala las dependencias:
+
+   ```bash
+   bun install
+   ```
+
+4. Ejecuta el servidor de desarrollo:
+
+   ```bash
+   bun run dev
+   ```
+
+Abre el proyecto en tu navegador:
+
+Visita <http://localhost:4321/portafolio_carlos_astro> para ver portafolio en acción.
+
+# Estructura del Proyecto
+
+Aquí hay una breve descripción de la estructura de archivos y carpetas del proyecto:
+
+```bash
+├── public
+│   └── ... (archivos estáticos)
+├── src
+│   ├── components
+│   │   └── ... (componentes de la interfaz)
+│   ├── layouts
+│   │   └── ... (diseños y plantillas)
+│   ├── pages
+│   │   └── ... (páginas del sitio web)
+│   └── libs
+│       └── ... (datosdatos de repositorios)
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+# Contacto
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Si deseas contactarme, puedes hacerlo a través de:
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Correo electrónico: <carlosgaubertquijada@gmail.com>
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/carlos-gaub-quijada/)
+- Github: [Github](https://github.com/CarlosGaubertQ|)
