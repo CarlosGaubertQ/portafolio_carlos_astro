@@ -22,7 +22,7 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 2. Navega al directorio del proyecto:
 
    ```bash
-   cd tu-repositorio
+   cd repositorio
    ```
 
 3. Instala las dependencias:
