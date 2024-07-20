@@ -9,17 +9,20 @@ const { patchImage, nameProject, descriptionProject, githubUrl } = Astro.props;
       alt="card"
       class="object-cover h-24 w-96 pt-[10px] z-20 rounded-t-[20px]"
     />
-    <a href={githubUrl} target="_blank" class="github-icon">
-      <img
-        class="bg-white rounded-full"
-        src="/portafolio_carlos_astro/github.webp"
-        alt="GitHub"
-      />
-    </a>
   </div>
 
   <div class="relative w-full h-full p-5 z-20">
-    <p class="text-lg font-bold">{nameProject}</p>
+    <div class="flex flex-row justify-between">
+      <p class="text-lg font-bold">{nameProject}</p>
+
+      <a href={githubUrl} target="_blank" class="github-icon">
+        <img
+          class="bg-white rounded-full"
+          src="/portafolio_carlos_astro/github.webp"
+          alt="GitHub"
+        />
+      </a>
+    </div>
     <p
       class="text-sm text-zinc-400 mt-2 h-20 overflow-scroll overflow-x-hidden
                 scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full
@@ -112,7 +115,7 @@ const { patchImage, nameProject, descriptionProject, githubUrl } = Astro.props;
   }
 
   .github-icon {
-    position: absolute;
+    position: inherit;
 
     top: 19px;
     left: 10px;

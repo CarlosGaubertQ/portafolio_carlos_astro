@@ -1,7 +1,7 @@
 export const repositories = [
   {
     patchImage: "/portafolio_carlos_astro/repositories/pytorch.png",
-    nameProject: "Sistema de clasificación de imágenes VIT.",
+    nameProject: "Clasificación de imágenes VIT.",
     descriptionProject:
       "Sistema que permite ver el comportamiento de una zona geografica y calcula el porcentaje de bosque en esta. Esta desarrollado con Python usando Django y utiliza Pytorch para los modelos de inteligencia artificial.",
     githubUrl: "https://github.com/CarlosGaubertQ/TesisGaubertMapas",
@@ -43,7 +43,7 @@ export const repositories = [
   },
   {
     patchImage: "/portafolio_carlos_astro/repositories/pytorch.png",
-    nameProject: "Entrenamiento de modelos satelitales.",
+    nameProject: "Modelos satelitales.",
     descriptionProject:
       "Sistema de entrenamiento de modelos satelitales. Desarrollado en Python utilizando Pytorch.",
     githubUrl: "https://github.com/CarlosGaubertQ/ExperimentoModelosSatellite",
