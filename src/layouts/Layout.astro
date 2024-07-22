@@ -39,37 +39,15 @@ const { title } = Astro.props;
         </div>
       </div>
     </nav>
-    <!--<div class="star star1 "></div>-->
-    <!--<div class="star star2 "></div>-->
-    <!--<div class="star star3 "></div>-->
-    <!--<div class="star star4 "></div>-->
-    <!--<div class="star star5 "></div>-->
-    <!--<div class="star star6 "></div>-->
-    <!--<div class="star star7 "></div>-->
-    <!--<div class="star star8 "></div>-->
+    <div class="star star1"></div>
+    <div class="star star2"></div>
+    <div class="star star3"></div>
+    <div class="star star4"></div>
+    <div class="star star5"></div>
+    <div class="star star6"></div>
+    <div class="star star7"></div>
+    <div class="star star8"></div>
     <slot />
-    <script>
-      const menuButton = document.getElementById("menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      menuButton!.addEventListener("click", () => {
-        if (mobileMenu!.classList.contains("hidden")) {
-          mobileMenu!.classList.remove("hidden");
-          setTimeout(() => {
-            mobileMenu!.classList.remove("transform", "scale-y-0");
-          }, 10);
-        } else {
-          mobileMenu!.classList.add("transform", "scale-y-0");
-          mobileMenu!.addEventListener(
-            "transitionend",
-            () => {
-              mobileMenu!.classList.add("hidden");
-            },
-            { once: true },
-          );
-        }
-      });
-    </script>
     <script>
       document.addEventListener("mousemove", function (e) {
         const feedback = document.querySelector(
