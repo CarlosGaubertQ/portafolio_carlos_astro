@@ -2,7 +2,9 @@
 const { patchImage, nameProject, descriptionProject, githubUrl } = Astro.props;
 ---
 
-<div class="box place-self-center grid-item">
+<div
+  class="box place-self-center grid-item animate-fade-up animate-duration-1000"
+>
   <div class="image-container h-24 z-20">
     <img
       src={patchImage}
@@ -47,16 +49,14 @@ const { patchImage, nameProject, descriptionProject, githubUrl } = Astro.props;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.15);
-    animation: initialAnimation 0.5s ease-out;
+    transition-duration: 0.2s;
   }
 
   .box:hover {
     box-shadow:
       0 8px 16px rgba(255, 255, 255, 0.2),
       0 12px 40px rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-    animation: hoverAnimation 0.5s ease-out;
-    animation-fill-mode: backwards;
+    scale: 1.05;
   }
   .box h2 {
     color: rgb(226, 226, 226);
