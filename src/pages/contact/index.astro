@@ -1,9 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { slide, fade } from "astro:transitions";
 ---
 
 <Layout title="Contact">
-  <div class="flex justify-center items-center w-full h-full animate-fade">
+  <div
+    class="flex justify-center items-center w-full h-full"
+    transition:name="main"
+    transition:animate={slide({
+      duration: "1s",
+    })}
+  >
     <div class="container">
       <div class="card max-w-[300px] sm:max-w-[500px] lg:max-w-3xl">
         <p class="text-[20px] md:text-[40px] font-bold">
