@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import Navbar from "../components/Navbar.astro";
+import Navbar from "@/components/Navbar.astro";
+import StarBackground from "@/components/StarBackground.astro";
 interface Props {
   title: string;
 }
@@ -21,15 +22,15 @@ const { title } = Astro.props;
   </head>
   <body>
     <Navbar />
+    <div class="star star1" transition:persist-props></div>
+    <!--<div class="star star2" transition:persist></div>-->
+    <!--<div class="star star3" transition:persist></div>-->
+    <!--<div class="star star4" transition:persist></div>-->
+    <!--<div class="star star5"></div>-->
+    <!--<div class="star star6"></div>-->
+    <!--<div class="star star7"></div>-->
+    <!--<div class="star star8"></div>-->
 
-    <div transition:persist class="star star1"></div>
-    <div transition:persist class="star star2"></div>
-    <div transition:persist class="star star3"></div>
-    <div transition:persist class="star star4"></div>
-    <div transition:persist class="star star5"></div>
-    <div transition:persist class="star star6"></div>
-    <div transition:persist class="star star7"></div>
-    <div transition:persist class="star star8"></div>
     <slot />
     <script>
       document.addEventListener("mousemove", function (e) {
@@ -44,22 +45,18 @@ const { title } = Astro.props;
         }
       });
     </script>
-    <div transition:name="light" transition:persist class="feedback z-0"></div>
+    <div transition:persist class="feedback z-0"></div>
     <style is:global>
-      @keyframes bump {
-        0% {
-          opacity: 0;
-          transform: scale(1) translateX(200px);
-        }
-        50% {
-          opacity: 0.5;
-          transform: scale(1.1);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1) translateX(0);
-        }
+      html {
+        font-family: "Montserrat", system-ui, sans-serif;
+        background: #000000;
+        color: White;
       }
+      body {
+        margin: 0;
+        height: 100dvh;
+      }
+
       .star {
         position: fixed;
         top: 0;
@@ -137,15 +134,6 @@ const { title } = Astro.props;
         100% {
           transform: scale(2);
         }
-      }
-      html {
-        font-family: "Montserrat", system-ui, sans-serif;
-        background: #000000;
-        color: White;
-      }
-      body {
-        margin: 0;
-        height: 100dvh;
       }
 
       .feedback {
