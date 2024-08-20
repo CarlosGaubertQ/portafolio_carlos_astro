@@ -1,6 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { slide, fade } from "astro:transitions";
+import { slide } from "astro:transitions";
+import GithubIcon from "@/components/Icons/GithubIcon.astro";
+import LinkedinIcon from "@/components/Icons/LinkedinIcon.astro";
+import GmailIcon from "@/components/Icons/GmailIcon.astro";
 ---
 
 <Layout title="Contact">
@@ -17,38 +20,26 @@ import { slide, fade } from "astro:transitions";
           Si quieres contactarte conmigo, puedes hacerlo bajo los siguientes
           medios:
         </p>
-        <ul class="list-none space-y-2 mt-4">
-          <li class="flex items-center">
-            <i class="fas fa-envelope mr-2"></i>
-            <a
-              href="mailto:carlosgaubertquijada@gmail.com"
-              target="_blank"
-              class="no-underline hover:animate-pulse text-[15px] sm:text-[20px] md:text-[20px]"
-            >
-              carlosgaubertquijada@gmail.com
-            </a>
-          </li>
-          <li class="flex items-center">
-            <i class="fab fa-linkedin mr-2"></i>
-            <a
-              href="https://www.linkedin.com/in/carlos-gaubert-9832b1b9/"
-              target="_blank"
-              class="no-underline hover:animate-pulse text-[15px] sm:text-[20px] md:text-[20px]"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li class="flex items-center">
-            <i class="fab fa-github mr-2"></i>
-            <a
-              href="https://github.com/CarlosGaubertQ"
-              target="_blank"
-              class="no-underline hover:animate-pulse text-[15px] sm:text-[20px] md:text-[20px]"
-            >
-              GitHub
-            </a>
-          </li>
-        </ul>
+        <div class="flex justify-center space-x-8">
+          <a href="mailto:carlosgaubertquijada@gmail.com" target="_blank">
+            <button class="flex-shrink-0">
+              <GmailIcon />
+            </button>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/carlos-gaubert-9832b1b9/"
+            target="_blank"
+          >
+            <button class="flex-shrink-0">
+              <LinkedinIcon />
+            </button>
+          </a>
+          <a href="https://github.com/CarlosGaubertQ" target="_blank">
+            <button class="flex-shrink-0">
+              <GithubIcon />
+            </button></a
+          >
+        </div>
       </div>
       <script lang="javascript" is:inline>
         (function () {
