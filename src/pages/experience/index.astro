@@ -11,9 +11,11 @@ import ItemExperience from "@/components/ItemExperience.astro";
     transition:animate={slide({
       duration: "1s",
     })}
-    class="flex flex-col items-center justify-center p-32"
+    class="flex flex-col items-center justify-center p-28"
   >
-    <ol class="border-gray-200 dark:border-gray-700">
+    <ol
+      class="border-gray-200 dark:border-gray-700 bg-gray-700 bg-opacity-20 pl-24 pr-24 border rounded-xl pb-20"
+    >
       {
         experiences.map((experience) => (
           <ItemExperience
