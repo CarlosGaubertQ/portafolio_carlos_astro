@@ -8,9 +8,9 @@ export const repositories = [
   },
   {
     patchImage: "/portafolio_carlos_astro/repositories/javaandroid.jpeg",
-    nameProject: "Ordenes de trabajo.",
+    nameProject: "órdenes de trabajo.",
     descriptionProject:
-      "Sistema de gestión de ordenes de trabajo para la gestión de proyectos. Desarrollado en android utilizando java y REST API usando retrofit.",
+      "Sistema de gestión de órdenes de trabajo para la gestión de proyectos. Desarrollado en android utilizando java y REST API usando retrofit.",
     githubUrl: "https://github.com/CarlosGaubertQ/Ordenes-de-Trabajo-2017",
   },
   {
