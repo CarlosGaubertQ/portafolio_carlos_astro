@@ -47,6 +47,12 @@ const { title } = Astro.props;
     </script>
     <div transition:persist class="feedback z-0"></div>
     <style is:global>
+      .scroll-container {
+        overflow: scroll;
+      }
+      .scroll-container::-webkit-scrollbar {
+        display: none;
+      }
       html {
         font-family: "Montserrat", system-ui, sans-serif;
         background: #000000;
