@@ -16,7 +16,7 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 1. **Clona el repositorio**:
 
    ```bash
-   git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/CarlosGaubertQ/portafolio_carlos_astro.git)
+   git clone https://github.com/CarlosGaubertQ/portafolio_carlos_astro.git
    ```
 
 2. Navega al directorio del proyecto:
