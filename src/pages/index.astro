@@ -1,12 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import ProfileImage from "@/components/ProfileImage.astro";
-import { fade, slide } from "astro:transitions";
+import { fade } from "astro:transitions";
 ---
 
 <Layout title="Portafolio Carlos Gaubert Quijada.">
   <div
-    class="flex flex-col items-center justify-center h-full animate-fade mb-28 md:mb-0"
+    class="flex flex-col items-center justify-center h-full animate-fade pb-28 md:pb-0"
     transition:animate={fade({
       duration: "0.5s",
     })}
